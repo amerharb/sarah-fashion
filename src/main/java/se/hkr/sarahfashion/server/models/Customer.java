@@ -4,9 +4,11 @@ public class Customer {
     private String ssn;
     private String name;
     private String address;
-    private boolean gender; // true for female and false for male TODO: if there is time make this enum
+    private GenderEnum gender;
 
-    public Customer(String ssn, String name, String address, boolean gender){
+    public enum GenderEnum {male, female}
+
+    public Customer(String ssn, String name, String address, GenderEnum gender) {
         this.ssn = ssn;
         this.name = name;
         this.address = address;
@@ -37,11 +39,11 @@ public class Customer {
         return address;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(GenderEnum gender) {
         this.gender = gender;
     }
 
-    public boolean isGender() {
+    public GenderEnum getGender() {
         return gender;
     }
 }

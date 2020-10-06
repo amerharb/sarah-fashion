@@ -19,7 +19,7 @@ public class CustomerRepository {
                 "1111",
                 "John Smith",
                 "Smith Family St.",
-                false
+                Customer.GenderEnum.male
         );
         mockDatabase.customers.add(customer1);
 
@@ -30,7 +30,8 @@ public class CustomerRepository {
                 "2222",
                 "Åsa Johansson",
                 "Åsa Mansion",
-                true
+                Customer.GenderEnum.female
+
         );
         mockDatabase.customers.add(customer2);
     }
