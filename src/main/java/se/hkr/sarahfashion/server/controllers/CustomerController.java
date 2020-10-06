@@ -22,6 +22,11 @@ public class CustomerController {
         service.addCustomer(customer);
     }
 
+    @PutMapping("/{ssn}/updateaddress")
+    public void updateCustomerAddress(@PathVariable String ssn, @RequestBody String newAddress) {
+        service.updateAddress(ssn, newAddress);
+    }
+
     @GetMapping
     public Iterable<Customer> getAllCustomers() {
         return service.getAllCustomers();

@@ -21,6 +21,12 @@ public class CustomerService {
         customerRepository.save(customer);
     }
 
+    public void updateAddress(String ssn, String newAddress) {
+        Customer customer = customerRepository.getBySnn(ssn);
+        if (customer == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No such customer with ssn: " + ssn);
+        customer.setAddress(newAddress);
+    }
+
     public void removeCustomer(String ssn) throws CustomerNotFoundException {
         Customer customer = customerRepository.getBySnn(ssn);
         if (customer == null) throw new CustomerNotFoundException("No such customer with ssn: " + ssn);
