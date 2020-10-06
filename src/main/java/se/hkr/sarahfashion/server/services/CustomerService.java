@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
+import se.hkr.sarahfashion.server.exceptions.CustomerAlreadyExistsException;
 import se.hkr.sarahfashion.server.exceptions.CustomerNotFoundException;
 import se.hkr.sarahfashion.server.models.Customer;
 import se.hkr.sarahfashion.server.repos.CustomerRepository;
@@ -18,6 +19,8 @@ public class CustomerService {
     }
 
     public void addCustomer(Customer customer) {
+        Customer find = customerRepository.getBySnn(customer.getSsn());
+        if (find != null) throw new CustomerAlreadyExistsException("customer with same ssn: " + customer.getSsn() + " exists");
         customerRepository.save(customer);
     }
 
