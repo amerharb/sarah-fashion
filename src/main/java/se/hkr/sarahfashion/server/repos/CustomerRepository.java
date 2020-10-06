@@ -12,8 +12,18 @@ public class CustomerRepository {
 
     public CustomerRepository() {
         // add mock data
-        Order order1 = new Order();
-        Order order2 = new Order();
+        Order order1 = new Order(
+                1,
+                "2020-09-01",
+                24.3,
+                Order.PaymentStatus.paid
+                );
+        Order order2 = new Order(
+                2,
+                "2020-09-02",
+                24.3,
+                Order.PaymentStatus.notPaid
+        );
         // TODO: add order to customer
         Customer customer1 = new Customer(
                 "1111",
@@ -23,8 +33,18 @@ public class CustomerRepository {
         );
         mockDatabase.customers.add(customer1);
 
-        Order order3 = new Order();
-        Order order4 = new Order();
+        Order order3 = new Order(
+                3,
+                "2020-09-03",
+                24.3,
+                Order.PaymentStatus.paid
+        );
+        Order order4 = new Order(
+                4,
+                "2020-09-04",
+                24.3,
+                Order.PaymentStatus.notPaid
+        );
         // TODO: add order to customer
         Customer customer2 = new Customer(
                 "2222",
