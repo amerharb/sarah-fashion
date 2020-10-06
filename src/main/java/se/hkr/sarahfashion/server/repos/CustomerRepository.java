@@ -21,37 +21,38 @@ public class CustomerRepository {
         Order order2 = new Order(
                 2,
                 "2020-09-02",
-                24.3,
+                400,
                 Order.PaymentStatus.notPaid
         );
-        // TODO: add order to customer
+        Order[] currentOrdersOfCustomer1 = {order1, order2};
         Customer customer1 = new Customer(
                 "1111",
                 "John Smith",
                 "Smith Family St.",
-                Customer.GenderEnum.male
+                Customer.GenderEnum.male,
+                currentOrdersOfCustomer1
         );
         mockDatabase.customers.add(customer1);
 
         Order order3 = new Order(
                 3,
                 "2020-09-03",
-                24.3,
+                10,
                 Order.PaymentStatus.paid
         );
         Order order4 = new Order(
                 4,
                 "2020-09-04",
-                24.3,
+                2000,
                 Order.PaymentStatus.notPaid
         );
-        // TODO: add order to customer
+        Order[] currentOrdersOfCustomer2 = {order3, order4};
         Customer customer2 = new Customer(
                 "2222",
                 "Åsa Johansson",
                 "Åsa Mansion",
-                Customer.GenderEnum.female
-
+                Customer.GenderEnum.female,
+                currentOrdersOfCustomer2
         );
         mockDatabase.customers.add(customer2);
     }

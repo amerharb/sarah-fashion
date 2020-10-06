@@ -1,18 +1,23 @@
 package se.hkr.sarahfashion.server.models;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Customer {
     private String ssn;
     private String name;
     private String address;
     private GenderEnum gender;
+    private final ArrayList<Order> orders = new ArrayList<>();
 
     public enum GenderEnum {male, female}
 
-    public Customer(String ssn, String name, String address, GenderEnum gender) {
+    public Customer(String ssn, String name, String address, GenderEnum gender, Order[] currentOrders) {
         this.ssn = ssn;
         this.name = name;
         this.address = address;
         this.gender = gender;
+        Collections.addAll(this.orders, currentOrders);
     }
 
     public void setSsn(String ssn) {
@@ -45,5 +50,9 @@ public class Customer {
 
     public GenderEnum getGender() {
         return gender;
+    }
+
+    public ArrayList<Order> getOrders() {
+        return orders;
     }
 }
