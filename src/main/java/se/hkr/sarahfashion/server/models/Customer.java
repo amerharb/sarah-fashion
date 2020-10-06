@@ -12,6 +12,8 @@ public class Customer {
 
     public enum GenderEnum {male, female}
 
+    public Customer() {}
+
     public Customer(String ssn, String name, String address, GenderEnum gender, Order[] currentOrders) {
         this.ssn = ssn;
         this.name = name;
