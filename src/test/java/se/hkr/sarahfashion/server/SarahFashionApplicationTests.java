@@ -1,4 +1,4 @@
-package se.hkr.sarahfashion;
+package se.hkr.sarahfashion.server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

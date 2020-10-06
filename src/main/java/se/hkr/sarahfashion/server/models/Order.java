@@ -1,4 +1,4 @@
-package se.hkr.sarahfashion.models;
+package se.hkr.sarahfashion.server.models;
 
 public class Order {
     private Long id;
